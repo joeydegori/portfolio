@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+      <header>
+        <h1>joey degori</h1>
+      </header>
+      <ul>
+        <li><a href="#home">home</a></li>
+        <li><a href="#gallery">gallery</a></li>
+        <li class="dropdown">
+          <a href="#projects">projects</a>
+          <ul class="dropdown-menu">
+            <li><a href="project1.html">project 1</a></li>
+            <li><a href="project2.html">project 2</a></li>
+            <li><a href="project3.html">project 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#about">about/contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="home" class="page">
+        <h1>Photography Portfolio</h1>
+        <div class="image-container">
+          <img src="path/to/your-image1.jpg" alt="Description of Image 1" />
+          <img src="path/to/your-image2.jpg" alt="Description of Image 2" />
+        </div>
+      </section>
+      <section id="gallery" class="page">
+        Gallery content here..
+        <h1>hello</h1>
+      </section>
+      <section id="projects" class="page">Overview of projects here...</section>
+      <section id="project1" class="page">Details of Project 1 here...</section>
+      <section id="project2" class="page">Details of Project 2 here...</section>
+      <section id="project3" class="page">Details of Project 3 here...</section>
+      <section id="about" class="page">About content here...</section>
+    </main>
+
+    <script>
+      $(document).ready(function () {
+        $(".page").hide(); // Initially hide all sections
+        $("#home").show(); // Show the gallery by default
+
+        $("nav a").click(function () {
+          var pageId = $(this).attr("href");
+          $(".page").hide(); // Hide all sections
+          $(pageId).show(); // Show the section linked in the href
+          return false; // Prevent the default action
+        });
+
+        // Handling for dropdown menu items
+        $("nav ul li.dropdown .dropdown-menu li a").click(function () {
+          var pageId = $(this).attr("href");
+          $(".page").hide(); // Hide all sections
+          $(pageId).show(); // Show the specific project
+          return false; // Prevent the default action
+        });
+      });
+    </script>
+  </body>
+</html>
