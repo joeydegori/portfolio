@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
 
 nav {
   position: fixed;
@@ -10,6 +11,11 @@ nav {
   width: 200px;
   background-color: #f1f1f1;
   padding: 20px;
+}
+
+body {
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23000000' fill-opacity='0.07'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 header {
@@ -23,21 +29,28 @@ nav ul {
 nav li {
   margin-bottom: 0px;
   margin-left: -20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #000;
   display: block;
   padding: 10px;
   font-family: "Lato", sans-serif;
   font-size: 16px;
 }
 
-nav a:hover {
-  background-color: #ddd;
+nav a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
   background-color: transparent;
   text-decoration: underline;
+}
+
+a:visited {
+    color: #d42222;  
+}
+
+a:active {
+    color: #d692b7;  
 }
 
 nav ul li.dropdown {
@@ -65,12 +78,22 @@ nav ul li.dropdown .dropdown-menu li {
 }
 
 nav ul li.dropdown .dropdown-menu li a {
-  color: #000;
+  color: #d692b7;
   text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
 }
 
 nav ul li.dropdown .dropdown-menu li a:hover {
   color: #555;
+}
+
+nav ul li.dropdown .dropdown-menu li a:visited {
+    color: #b86ab5;  /* Different shade to show visited links */
+}
+
+nav ul li.dropdown .dropdown-menu li a:active {
+    color: #e09e9e;  /* Change color when actively clicked */
 }
 
 main {
@@ -88,16 +111,288 @@ main {
   main {
     margin-left: 0;
   }
+
+  .flex-container {
+    flex-direction: column; /* Stack flex items vertically on smaller screens */
+    align-items: center; /* Center-align items horizontally */
+  }
+
+  .welcome {
+    text-align: center; /* Center-align text for smaller screens */
+    font-size: 20px; /* Adjust font size to be smaller */
+  }
+
+  .image-container img {
+    width: 100%; /* Full width images for smaller screens */
+    max-width: 400px; /* Limit the maximum size of images */
+  }
 }
 
 .image-container {
   display: flex;
-  justify-content: center; /* Aligns items horizontally at the center */
-  align-items: center; /* Aligns items vertically at the center */
-  gap: 20px; /* Space between each image */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 
-.image-container img {
-  width: 50%; /* Adjust based on desired size or responsiveness */
-  height: auto; /* Maintains the aspect ratio of the images */
+.column-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
 }
+
+.image-container .self-portrait {
+  width: 41%;
+  height: auto;
+  margin-top: -3%;
+}
+
+.image-container .public-market {
+  width: 79%;
+  height: auto;
+  margin-top: -5%;
+}
+
+.image-container .blinds {
+  width: 80%;
+  height: auto;
+}
+
+.welcome {
+  font-size: 70px;
+  font-family: "Cedarville Cursive", sans-serif;
+  align-self: flex-start;
+  margin-top: 0%;
+}
+
+.welcome-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-sign {
+  font-size: 50px;
+  font-family: "Cedarville Cursive", sans-serif;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.my-projects {
+  font-size: 50px;
+  font-family: "Cedarville Cursive", sans-serif;
+}
+
+.projects {
+  display: flex;
+  justify-content: space-around;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+}
+
+.project-item img {
+  width: 100%;
+  height: auto;
+}
+
+.nat-photo {
+  margin-top: 30px;
+}
+
+.project-font {
+  font-size: 100px;
+}
+
+.projects a {
+  font-family: "Cedarville Cursive", sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  color: #000;
+}
+
+.projects a:hover {
+  text-decoration: underline;
+}
+
+.projects a:active {
+  
+  color: #b86ab5;
+}
+
+.projects a:visited {
+    color: #9b59b6;  
+}
+
+.project1-title {
+  margin-top: 12px;
+}
+
+.nav-attribution {
+  position: fixed;
+  font-size: 10px;
+  white-space: nowrap;
+  bottom: 0;
+  width: 100%;
+  text-align: start;
+  display: flex;
+  color: #000;
+  gap: 5px;
+}
+
+.nav-attribution a {
+  color: #555;
+}
+
+.nav-attribution a:active {
+  color: #b86ab5;
+}
+
+.nav-attribution a:visited {
+  color: #555;
+}
+
+
+.project1-flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project1-head {
+  font-family: "Cedarville Cursive", sans-serif;
+  font-size: 50px;
+  align-self: center;
+}
+
+.project1-p {
+  font-family: "Cedarville Cursive", sans-serif;
+  font-size: 20px;
+  margin-top: -30px;
+  margin-right: 50px;
+}
+
+.project1-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (min-width: 500px) {
+  .project1-images img {
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+  }
+}
+
+@media (min-width: 800px) {
+  .project1-images img {
+    flex: 1 1 250px;
+  }
+}
+
+.project1-images img {
+  width: 100%; /* Ensures the image scales within its container */
+  height: auto; /* Keeps the aspect ratio intact */
+  max-width: 450px; /* Increase the max-width as needed */
+  flex: 1 1 300px;
+}
+
+.project2-container {
+  display: flex;
+  gap: 20px;
+}
+
+.project2-paragraph {
+  flex: 1;
+}
+
+.project2-p-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.project2-p-images img {
+  width: 100%;
+  height: auto;
+}
+
+.project2-images {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.project2-images img {
+  width: 100%;
+  height: auto;
+}
+
+.project2-p {
+  font-family: "Cedarville Cursive", sans-serif;
+  font-size: 20px;
+}
+
+.project3-container {
+  display: flex;
+  gap: 20px;
+}
+
+.project3-paragraph {
+  flex: 1;
+  order: 2;
+}
+
+.project3-p {
+  font-family: "Cedarville Cursive", sans-serif;
+  font-size: 20px;
+}
+
+.project3-p-images {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.project3-p-images img {
+  width: 100%;
+  height: auto;
+}
+
+.project3-images {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  order: 1;
+}
+
+.project3-images img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* ADD LINK STATES!!!! fix link states they're being overridden make them more specific to each specific thing. Change the attribution and the fact
+that it goes to a blank page when you press the link Text content does not stretch beyond 60 characters • Individual page weight does not exceed 2 MB/*
