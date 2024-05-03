@@ -13,7 +13,9 @@
         <h1>joey degori</h1>
       </header>
       <ul>
-        <li><a href="#home">home</a></li>
+        <li>
+          <a href="#home">home</a>
+        </li>
         <li><a href="#gallery-section">gallery</a></li>
         <li class="dropdown">
           <a href="#projects-section">projects</a>
@@ -53,14 +55,12 @@
             alt="self portrait"
             class="self-portrait"
           />
-          <div class="column-container">
-            <img
-              src="images/home/public-market.jpg"
-              alt="public market"
-              class="public-market"
-            />
-            <img src="images/home/blinds.jpg" alt="blinds" class="blinds" />
-          </div>
+          <img
+            src="images/home/public-market.jpg"
+            alt="public market"
+            class="public-market"
+          />
+          <img src="images/home/blinds.jpg" alt="blinds" class="blinds" />
         </div>
       </section>
 
@@ -254,14 +254,16 @@
         $(".page").hide(); // Initially hide all sections
         $("#home").show(); // Show the gallery by default
 
-        $("nav a, .project-item a").click(function () {
-          var pageId = $(this).attr("href");
-          $(".page").hide(); // Hide all sections
-          $(pageId).show(); // Show the section linked in the href
-          return false; // Prevent the default action
-        });
+        $("nav a, .project-item a")
+          .not(".nav-attribution a")
+          .click(function () {
+            var pageId = $(this).attr("href");
+            $(".page").hide(); // Hide all sections
+            $(pageId).show(); // Show the section linked in the href
+            return false; // Prevent the default action
+          });
 
-        // Handling for dropdown menu items
+        //Handling for dropdown menu items
         $("nav ul li.dropdown .dropdown-menu li a").click(function () {
           var pageId = $(this).attr("href");
           $(".page").hide(); // Hide all sections
