@@ -251,24 +251,23 @@
 
     <script>
       $(document).ready(function () {
-        $(".page").hide(); // Initially hide all sections
-        $("#home").show(); // Show the gallery by default
+        $(".page").hide();
+        $("#home").show();
 
         $("nav a, .project-item a")
           .not(".nav-attribution a")
           .click(function () {
             var pageId = $(this).attr("href");
-            $(".page").hide(); // Hide all sections
-            $(pageId).show(); // Show the section linked in the href
-            return false; // Prevent the default action
+            $(".page").hide();
+            $(pageId).show();
+            return false;
           });
 
-        //Handling for dropdown menu items
         $("nav ul li.dropdown .dropdown-menu li a").click(function () {
           var pageId = $(this).attr("href");
-          $(".page").hide(); // Hide all sections
-          $(pageId).show(); // Show the specific project
-          return false; // Prevent the default action
+          $(".page").hide();
+          $(pageId).show();
+          return false;
         });
       });
     </script>
